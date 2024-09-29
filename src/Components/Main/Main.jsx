@@ -14,12 +14,24 @@ const Main = () => {
     input,
   } = useContext(Context);
 
+  // Function to handle card click and set the input prompt
+  const handleCardClick = (promptText) => {
+    setInput(promptText); // Set the clicked card text as the input
+    onSent(); // Trigger the function to process the prompt
+  };
+
   return (
     <div className="container">
       <div className="main">
         <div className="nav">
           <p>Gemini</p>
-          <img src={assets.user_icon} alt="Omkar" />                   {/* User photo */}
+          <a
+            href="https://github.com/omkarkhot0500"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={assets.user_icon} alt="Omkar" /> {/* User photo */}
+          </a>
         </div>
         <div className="main-container">
           {!showResult ? (
@@ -31,21 +43,49 @@ const Main = () => {
                 <p>How can I help you today?</p>
               </div>
               <div className="cards">
-                <div className="card">
+                <div
+                  className="card"
+                  onClick={() =>
+                    handleCardClick(
+                      "Suggest beautiful places to see on my upcoming road trip"
+                    )
+                  }
+                >
                   <p>
-                    Suggest beautiful places to see on my upcoming read trip
+                    Suggest beautiful places to see on my upcoming road trip
                   </p>
                   <img src={assets.compass_icon} alt="" />
                 </div>
-                <div className="card">
-                  <p>Breafly summarise the concept: urban planning</p>
+                <div
+                  className="card"
+                  onClick={() =>
+                    handleCardClick(
+                      "Briefly summarise the concept: urban planning"
+                    )
+                  }
+                >
+                  <p>Briefly summarise the concept: urban planning</p>
                   <img src={assets.bulb_icon} alt="" />
                 </div>
-                <div className="card">
-                  <p>Brainstrom team bonding activities for our work retreat</p>
+                <div
+                  className="card"
+                  onClick={() =>
+                    handleCardClick(
+                      "Brainstorm team bonding activities for our work retreat"
+                    )
+                  }
+                >
+                  <p>Brainstorm team bonding activities for our work retreat</p>
                   <img src={assets.message_icon} alt="" />
                 </div>
-                <div className="card">
+                <div
+                  className="card"
+                  onClick={() =>
+                    handleCardClick(
+                      "Improve the readability of the following code"
+                    )
+                  }
+                >
                   <p>Improve the readability of the following code</p>
                   <img src={assets.code_icon} alt="" />
                 </div>
