@@ -47,7 +47,7 @@ const Main = () => {
                   className="card"
                   onClick={() =>
                     handleCardClick(
-                      "Suggest beautiful places to see on my upcoming road trip"
+                      "Suggest beautiful places to see in Bengaluru"
                     )
                   }
                 >
@@ -80,11 +80,7 @@ const Main = () => {
                 </div>
                 <div
                   className="card"
-                  onClick={() =>
-                    handleCardClick(
-                      "Improve the readability of the following code"
-                    )
-                  }
+                  onClick={() => handleCardClick("What is JJK")}
                 >
                   <p>Improve the readability of the following code</p>
                   <img src={assets.code_icon} alt="" />
@@ -95,7 +91,7 @@ const Main = () => {
             <div className="result">
               <div className="result-title">
                 <img src={assets.user_icon} alt="" />
-                <p>{recentPrompt}</p>
+                <p>{recentPrompt}</p> {/* Prompt */}
               </div>
               {loading ? (
                 <div className="result-data">
@@ -123,13 +119,15 @@ const Main = () => {
               type="text"
               placeholder="Enter a prompt here"
             />
-            <div>
-              <img src={assets.gallery_icon} alt="" />
-              <img src={assets.mic_icon} alt="" />
-              {input ? (
-                <img onClick={() => onSent()} src={assets.send_icon} alt="" />
-              ) : null}
-            </div>
+            <button
+              className="icon-button"
+              onClick={() => input && onSent()}
+              disabled={!input}
+            >
+              <img src={assets.gallery_icon} alt="Gallery" />
+              <img src={assets.mic_icon} alt="Mic" />
+              {input && <img src={assets.send_icon} alt="Send" />}
+            </button>
           </div>
           <p className="bottom-info">
             Gemini may display inaccurate info, including about people, so
