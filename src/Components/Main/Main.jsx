@@ -119,13 +119,13 @@ const Main = () => {
               type="text"
               placeholder="Enter a prompt here"
             />
+              <img src={assets.gallery_icon} alt="Gallery" />
+              <img src={assets.mic_icon} alt="Mic" />
             <button
               className="icon-button"
               onClick={() => input && onSent()}
               disabled={!input}
             >
-              <img src={assets.gallery_icon} alt="Gallery" />
-              <img src={assets.mic_icon} alt="Mic" />
               {input && <img src={assets.send_icon} alt="Send" />}
             </button>
           </div>
