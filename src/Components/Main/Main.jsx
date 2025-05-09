@@ -26,11 +26,11 @@ const Main = () => {
         <div className="nav">
           <p>Gemini</p>
           <a
-            href="https://github.com/omkarkhot0500"
+            href="https://github.com/RXIYXN"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={assets.user_icon} alt="Omkar" /> {/* User photo */}
+            <img src={assets.user_icon} alt="Raiyan" /> {/* User photo */}
           </a>
         </div>
         <div className="main-container">
@@ -38,7 +38,7 @@ const Main = () => {
             <>
               <div className="greet">
                 <p>
-                  <span>Hello, Omkar</span>
+                  <span>Hello, Raiyan</span>
                 </p>
                 <p>How can I help you today?</p>
               </div>
